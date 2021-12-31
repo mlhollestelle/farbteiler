@@ -1,0 +1,20 @@
+---
+title: "farbteiler"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{farbteiler}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(farbteiler)
+generate_random_walk(5, projection = "cabinet")
+```
