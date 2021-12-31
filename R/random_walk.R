@@ -55,12 +55,16 @@ plot_random_walk_from_coords = function(coords) {
 #' Generate a random walk and return it as a ggplot2 object.
 #'
 #' @param steps number of steps in the walk.
+#' @param projection projection, supported: "cabinet"
 #'
 #' @return a ggplot2 object.
 #' @export
-generate_random_walk = function(steps) {
+generate_random_walk = function(steps, projection = NULL) {
   steps = generate_steps(steps = steps)
   coords = random_walk_coords(steps)
+  if (projection == "cabinet") {
+    coords = cabinet_projection(coords)
+  }
   plot = plot_random_walk_from_coords(coords)
   return(plot)
 }
