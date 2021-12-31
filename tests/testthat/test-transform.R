@@ -3,7 +3,7 @@ points = data.frame(
   y = c(0, 0, 1, 1)
 )
 
-points_cabinet = cabinet_projection(points)
+points_cabinet = .cabinet_projection(points)
 
 # Bit shitty test for now but OK
 test_that("transformation_works", {

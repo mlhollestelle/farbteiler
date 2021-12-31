@@ -1,6 +1,5 @@
-cabinet_projection = function(points, alpha = 63.4) {
-  cabinet_points = data.frame(
-    x = points$x + 0.5 * points$y * cos(alpha),
-    y = points$y + 0.5 * points$y * sin(alpha))
-  return(cabinet_points)
+.cabinet_projection = function(walk, alpha = 63.4) {
+  walk$x = walk$x + 0.5 * walk$y * cos(alpha)
+  walk$y = walk$y + 0.5 * walk$y * sin(alpha)
+  return(walk)
 }
