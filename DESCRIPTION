@@ -1,0 +1,17 @@
+Package: farbteiler
+Title: farbteiler
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Martijn",
+           family = "Hollestelle",
+           role = c("aut", "cre"),
+           email = "martijnhollestelle@gmail.com")
+Description: Generate art as inspired by farbteiler.
+License: TBD
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    testthat (>= 2.1.0)
+Imports: 
+    ggplot2
+RoxygenNote: 6.1.1
