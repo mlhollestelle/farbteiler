@@ -16,5 +16,6 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(farbteiler)
-generate_random_walk(5, projection = "cabinet")
+walk = generate_walk(n_segments = 16)
+plot_random_walk(walk)
 ```
