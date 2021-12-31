@@ -4,10 +4,12 @@
 \alias{generate_random_walk}
 \title{Generate a random walk and return it as a ggplot2 object.}
 \usage{
-generate_random_walk(steps)
+generate_random_walk(steps, projection = NULL)
 }
 \arguments{
 \item{steps}{number of steps in the walk.}
+
+\item{projection}{projection, supported: "cabinet"}
 }
 \value{
 a ggplot2 object.
