@@ -75,6 +75,7 @@ generate_walk = function(n_segments) {
 plot_random_walk = function(walk, alpha = 45, z = 1, levels = 3, spacing = 0) {
   walk = .cabinet_projection(walk, alpha)
   walk = .extrude_walk(walk, z)
+  walk = .identify_depth(walk)
   plot = ggplot2::ggplot(data = walk,
                          ggplot2::aes(x = x, y = y, group = interaction(group, level))) +
     ggplot2::geom_polygon() +
