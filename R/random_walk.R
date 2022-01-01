@@ -75,11 +75,19 @@ generate_walk = function(n_segments) {
 plot_random_walk = function(walk, alpha = 45, z = 1, levels = 3, spacing = 0) {
   walk = .cabinet_projection(walk, alpha)
   walk = .extrude_walk(walk, z)
-  plot = ggplot2::ggplot(data = walk,
-                         ggplot2::aes(x = x, y = y, group = interaction(group, level))) +
-    ggplot2::geom_polygon() +
-    ggplot2::geom_path() +
-    ggplot2::coord_fixed() +
-    ggplot2::theme_void()
+  walk = .identify_depth(walk)
+  # init plot
+  plot = ggplot2::ggplot() + ggplot2::coord_fixed() + ggplot2::theme_void()
+  for (level in sort(unique(walk$level))) {
+    for(depth in rev(sort(unique(walk$depth)))) {
+      plot_data = walk[walk$level == level & walk$depth == depth, ]
+      mapping = ggplot2::aes(x = x, y = y, group = group)
+      plot = plot + ggplot2::geom_polygon(data = plot_data,
+                                          mapping = mapping,
+                                          alpha = 1, fill = "red")
+      plot = plot + ggplot2::geom_path(data = plot_data,
+                                       mapping = mapping)
+    }
+  }
   return(plot)
 }
