@@ -18,4 +18,6 @@
     return(data.frame(depth = depth))
   })
   walk = merge(walk, depth)
+  walk = walk[with(walk, order(level, group, order)), ]
+  return(walk)
 }
