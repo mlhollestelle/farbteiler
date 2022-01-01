@@ -4,12 +4,16 @@
 \alias{.extrude_walk}
 \title{Extrude a random walk.}
 \usage{
-.extrude_walk(walk, z = 1)
+.extrude_walk(walk, z = 1, levels = 3, spacing = 0.2)
 }
 \arguments{
 \item{walk}{a random walk.}
 
 \item{z}{extrusion value.}
+
+\item{levels}{number of levels of the walk.}
+
+\item{spacing}{spacing between levels of the walk.}
 }
 \value{
 a data frame.
