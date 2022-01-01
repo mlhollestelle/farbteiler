@@ -76,6 +76,7 @@ plot_random_walk = function(walk, alpha = 45, z = 1) {
   plot = ggplot2::ggplot(data = walk,
                          ggplot2::aes(x = x, y = y, group = group)) +
     ggplot2::geom_polygon() +
+    ggplot2::geom_path() +
     ggplot2::coord_fixed() +
     ggplot2::theme_void()
   return(plot)
