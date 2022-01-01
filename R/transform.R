@@ -28,6 +28,7 @@
       element[],
       element_extruded[rev(seq_len(nrow(element_extruded))), ]
     )
+    polygon$order = seq_len(nrow(polygon))
     return(polygon)
   })
   walk_extruded$level = 1
