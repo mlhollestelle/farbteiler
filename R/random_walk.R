@@ -72,12 +72,15 @@ generate_walk = function(n_segments) {
 #'
 #' @return a ggplot2 object.
 #' @export
-plot_random_walk = function(walk, alpha = 45, z = 1, levels = 3, spacing = 0) {
+plot_random_walk = function(walk, alpha = 63.4, z = 1, levels = 3, spacing = 0) {
   walk = .cabinet_projection(walk, alpha)
   walk = .extrude_walk(walk, z)
   walk = .identify_depth(walk)
   # init plot
   plot = ggplot2::ggplot() + ggplot2::coord_fixed() + ggplot2::theme_void()
+  plot = plot + ggplot2::geom_point(data = generate_background_pattern(),
+                                    mapping = ggplot2::aes(x,y),
+                                    size = 0.1, stroke = 0)
   for (level in sort(unique(walk$level))) {
     for(depth in rev(sort(unique(walk$depth)))) {
       plot_data = walk[walk$level == level & walk$depth == depth, ]

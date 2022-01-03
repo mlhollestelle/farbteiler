@@ -2,6 +2,7 @@
 
 export(.extrude_walk)
 export(.identify_depth)
+export(generate_background_pattern)
 export(generate_walk)
 export(get_directions)
 export(plot_random_walk)
