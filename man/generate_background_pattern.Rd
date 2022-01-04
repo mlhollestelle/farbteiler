@@ -4,10 +4,14 @@
 \alias{generate_background_pattern}
 \title{Generate a background pattern.}
 \usage{
-generate_background_pattern(res = 0.05)
+generate_background_pattern(walk, res = 0.05, border = 4)
 }
 \arguments{
+\item{walk}{a walk.}
+
 \item{res}{resolution of the pattern.}
+
+\item{border}{spacing around walk.}
 }
 \value{
 a data frame of points.
