@@ -39,7 +39,7 @@ plot_random_walk = function(walk, alpha = 63.4, z = 1,
       mapping = ggplot2::aes(x = x, y = y, group = group)
       plot = plot + ggplot2::geom_polygon(data = plot_data,
                                           mapping = mapping,
-                                          alpha = 1,
+                                          alpha = 0.8,
                                           fill = sample(plot_colors, 1))
       # plot = plot + ggplot2::geom_path(data = plot_data,
       #                                  mapping = mapping)
