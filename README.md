@@ -28,3 +28,33 @@ farbteiler()
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />
+
+``` r
+farbteiler()
+```
+
+<img src="man/figures/README-example-2.png" width="100%" />
+
+``` r
+farbteiler()
+```
+
+<img src="man/figures/README-example-3.png" width="100%" />
+
+``` r
+farbteiler()
+```
+
+<img src="man/figures/README-example-4.png" width="100%" />
+
+``` r
+farbteiler()
+```
+
+<img src="man/figures/README-example-5.png" width="100%" />
+
+``` r
+farbteiler()
+```
+
+<img src="man/figures/README-example-6.png" width="100%" />
