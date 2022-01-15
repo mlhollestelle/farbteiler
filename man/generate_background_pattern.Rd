@@ -4,7 +4,7 @@
 \alias{generate_background_pattern}
 \title{Generate a background pattern.}
 \usage{
-generate_background_pattern(walk, res = 0.05, border = 1)
+generate_background_pattern(walk, res = 0.05, border = 1, ratio = 3/2)
 }
 \arguments{
 \item{walk}{a walk.}
