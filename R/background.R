@@ -6,7 +6,7 @@
 #'
 #' @return a data frame of points.
 #' @export
-generate_background_pattern = function(walk, res = 0.05, border = 4) {
+generate_background_pattern = function(walk, res = 0.05, border = 1) {
   bbox = get_bbox(walk)
   x = seq(bbox$x[1] - border, bbox$x[2] + border, by = res)
   y = seq(bbox$y[1] - border, bbox$y[2] + border, by = res)
@@ -22,8 +22,8 @@ generate_background_pattern = function(walk, res = 0.05, border = 4) {
 #' @export
 get_bbox = function(df) {
   bbox = data.frame(
-    x = range(walk$x),
-    y = range(walk$y)
+    x = range(df$x),
+    y = range(df$y)
   )
   return(bbox)
 }

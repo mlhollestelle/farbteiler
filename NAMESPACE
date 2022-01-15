@@ -2,9 +2,12 @@
 
 export(.extrude_walk)
 export(.identify_depth)
+export(farbkreis)
+export(farbteiler)
 export(generate_background_pattern)
 export(generate_walk)
 export(get_bbox)
+export(get_colors)
 export(get_directions)
 export(plot_random_walk)
 importFrom(utils,tail)
