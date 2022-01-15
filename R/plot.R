@@ -11,7 +11,7 @@
 plot_random_walk = function(walk, alpha = 63.4, z = 1,
                             levels, spacing) {
   walk = .cabinet_projection(walk, alpha)
-  walk = .extrude_walk(walk, z, spacing = spacing)
+  walk = .extrude_walk(walk, z = z, levels = levels, spacing = spacing)
   walk = .identify_depth(walk)
   plot_colors = get_colors()
   n_colors = length(plot_colors)

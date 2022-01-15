@@ -4,10 +4,12 @@
 \alias{get_bbox}
 \title{Get bounding box of an object.}
 \usage{
-get_bbox(df)
+get_bbox(df, border)
 }
 \arguments{
 \item{df}{a data frame with an x and y column.}
+
+\item{border}{border around the bounding box.}
 }
 \value{
 a data frame.
