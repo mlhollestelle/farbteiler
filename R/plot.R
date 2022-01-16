@@ -10,23 +10,11 @@
 #' @export
 plot_random_walk = function(walk, alpha = 63.4, z = 1,
                             levels, spacing) {
-  walk = .cabinet_projection(walk, alpha)
-  walk = .extrude_walk(walk, z = z, levels = levels, spacing = spacing)
-  walk = .identify_depth(walk)
   plot_colors = get_colors()
   n_colors = length(plot_colors)
   # Generate pattern and colors:
   pattern = generate_background_pattern(walk)
   pattern$color = (sample(plot_colors, nrow(pattern), replace = TRUE))
-  # Assign colors to squares:
-  # walk = plyr::ddply(walk,
-  #                    .variables = c("group", "level"),
-  #                    function(square) {
-  #                      square$color = as.factor(sample(seq_len(n_colors), 1))
-  #                      return(square)
-  #                    }
-  #                    )
-
   # init plot
   plot = ggplot2::ggplot() +
     ggplot2::coord_fixed() + ggplot2::theme_void()

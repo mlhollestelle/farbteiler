@@ -7,6 +7,9 @@ farbteiler = function() {
   levels = sample(1:6, 1)
   spacing = sample(c(0, 0.2, 0.5, 1), 1)
   walk = generate_walk(n_segments)
-  plot = plot_random_walk(walk = walk, levels = levels, spacing = spacing)
+  walk = .cabinet_projection(walk, alpha)
+  walk = .extrude_walk(walk, z = z, levels = levels, spacing = spacing)
+  walk = .identify_depth(walk)
+  plot = plot_random_walk(walk = walk)
   return(plot)
 }
