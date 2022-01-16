@@ -17,35 +17,36 @@ plot_random_walk = function(walk, alpha = 63.4, z = 1,
   n_colors = length(plot_colors)
   # Generate pattern and colors:
   pattern = generate_background_pattern(walk)
-  pattern$color = as.factor(sample(seq_len(n_colors), nrow(pattern), replace = TRUE))
+  pattern$color = (sample(plot_colors, nrow(pattern), replace = TRUE))
   # Assign colors to squares:
-  walk = plyr::ddply(walk,
-                     .variables = c("group", "level"),
-                     function(square) {
-                       square$color = as.factor(sample(seq_len(n_colors), 1))
-                       return(square)
-                     }
-                     )
+  # walk = plyr::ddply(walk,
+  #                    .variables = c("group", "level"),
+  #                    function(square) {
+  #                      square$color = as.factor(sample(seq_len(n_colors), 1))
+  #                      return(square)
+  #                    }
+  #                    )
 
   # init plot
-  plot = ggplot2::ggplot() + ggplot2::coord_fixed() + ggplot2::theme_void()
+  plot = ggplot2::ggplot() +
+    ggplot2::coord_fixed() + ggplot2::theme_void()
+  # Add pattern
   plot = plot + ggplot2::geom_point(
     data = pattern,
     mapping = ggplot2::aes(x,y, color = color),
     size = 0.2, stroke = 0)
+  plot = plot + ggplot2::scale_color_identity()
   for (level in sort(unique(walk$level))) {
     for(depth in rev(sort(unique(walk$depth)))) {
       plot_data = walk[walk$level == level & walk$depth == depth, ]
       mapping = ggplot2::aes(x = x, y = y, group = group)
-      plot = plot + ggplot2::geom_polygon(data = plot_data,
-                                          mapping = mapping,
-                                          alpha = 0.8,
-                                          fill = sample(plot_colors, 1))
-      # plot = plot + ggplot2::geom_path(data = plot_data,
-      #                                  mapping = mapping)
+      plot = plot + ggplot2::geom_polygon(
+        data = plot_data,
+        mapping = mapping,
+        alpha = 0.8,
+        fill = sample(plot_colors, 1)
+        )
     }
   }
-  plot = plot + ggplot2::scale_fill_manual(values = plot_colors)
-  plot = plot + ggplot2::theme(legend.position = "none")
   return(plot)
 }
