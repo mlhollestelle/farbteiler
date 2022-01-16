@@ -10,7 +10,10 @@ workflow](https://github.com/mlhollestelle/farbteiler/actions/workflows/r.yml/ba
 <!-- badges: end -->
 
 An R-package to generate art inspired by
-[farbteiler](https://erikswahn.com/farbteiler/) by Erik Swahn.
+[farbteiler](https://erikswahn.com/farbteiler/) by Erik Swahn. Erik
+Swahn is the creator behind the system and this is just a mere
+implementation of his idea based on available documentation of the
+system. This library is for personal use only.
 
 ## Installation
 
@@ -20,7 +23,9 @@ You can install the released version of farbteiler from github:
 remotes::install_github("mlhollestelle/farbteiler")
 ```
 
-This is a basic example which shows you how to solve a common problem:
+## Usage
+
+Use the function `farbteiler()` to plot the object.
 
 ``` r
 library(farbteiler)
