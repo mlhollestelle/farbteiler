@@ -12,6 +12,8 @@ generate_background_pattern(walk, res = 0.05, border = 1, ratio = 3/2)
 \item{res}{resolution of the pattern.}
 
 \item{border}{spacing around walk.}
+
+\item{ratio}{aspect ratio}
 }
 \value{
 a data frame of points.

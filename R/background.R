@@ -3,6 +3,7 @@
 #' @param res resolution of the pattern.
 #' @param walk a walk.
 #' @param border spacing around walk.
+#' @param ratio aspect ratio
 #'
 #' @return a data frame of points.
 #' @export
